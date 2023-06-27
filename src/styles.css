@@ -1,0 +1,292 @@
+/* Reset and base styles  */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Raleway:wght@400;700&family=Roboto:wght@300&display=swap');
+* {
+	padding: 0px;
+	margin: 0px;
+	border: none;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+/* Links */
+a,
+a:link,
+a:visited {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+/* Common */
+aside,
+nav,
+footer,
+header,
+section,
+main {
+	display: block;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+	font-size: inherit;
+	font-weight: inherit;
+}
+
+ul,
+ul li {
+	list-style: none;
+}
+
+img {
+	vertical-align: top;
+}
+
+img,
+svg {
+	max-width: 100%;
+	height: auto;
+}
+
+address {
+	font-style: normal;
+}
+
+/* Form */
+input,
+textarea,
+button,
+select {
+	font-family: inherit;
+	font-size: inherit;
+	color: inherit;
+	background-color: transparent;
+}
+
+input::-ms-clear {
+	display: none;
+}
+
+button,
+input[type='submit'] {
+	display: inline-block;
+	box-shadow: none;
+	background-color: transparent;
+	background: none;
+	cursor: pointer;
+}
+
+input:focus,
+input:active,
+button:focus,
+button:active {
+	outline: none;
+}
+
+button::-moz-focus-inner {
+	padding: 0;
+	border: 0;
+}
+
+label {
+	cursor: pointer;
+}
+
+legend {
+	display: block;
+}
+
+body {
+	font-family: 'Raleway', sans-serif;
+	color: #fff;
+	font-size: 16px;
+
+	background-color: #131313;
+}
+
+.container {
+	margin: 0 auto;
+	padding: 0px 15px;
+	max-width: 950px;
+}
+
+.header__form {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 30px;
+
+	margin-top: 100px;
+	padding: 20px 40px;
+
+	background-color: #ffffff0f;
+
+	border-radius: 50px;
+	border: 1px solid #ffffff17;
+
+	backdrop-filter: blur(10px);
+}
+
+
+.header__input {
+	width: 100%;
+	box-sizing: border-box;
+
+	padding: 10px 30px;
+
+	background-color: #0000001f;
+	border-radius: 50px;
+	border: 1px solid #ffffff17;
+
+	outline: none;
+}
+
+.header__input:focus {
+	border: 1px solid #2bcc81;
+	transition: border 0.2s ease-in;
+}
+
+.header__input::placeholder {
+	color: #aaaaaa;
+}
+
+.header__btn {
+	padding: 10px 30px;
+	border-radius: 50px;
+	color: #fff;
+	font-weight: 700;
+
+	background: linear-gradient(90deg, #2bcc81, #00b5e2);
+  background: -moz-radial-gradient(90deg, #2bcc81, #00b5e2);
+  background: -webkit-radial-gradient(90deg, #2bcc81, #00b5e2);
+
+  transition: transform 0.2s ease-in;
+}
+
+.header__btn:hover {
+  transform: scale(1.05);
+}
+
+.tasks__wrapper {
+	margin-top: 20px;
+  margin-bottom: 100px;
+	padding: 40px;
+
+	background-color: #ffffff0f;
+
+	border-radius: 40px;
+}
+
+.tasks__title {
+  margin-bottom: 30px;
+	font-size: 36px;
+}
+
+.tasks__list {
+	padding: 20px;
+  display: grid;
+  gap: 10px;
+
+	background-color: #0000001f;
+  border-radius: 30px;
+}
+
+.task {
+	display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1em;
+  padding: 10px 20px;
+
+  font-size: 14px;
+  line-height: 1.5;
+  letter-spacing: 0.05em;
+
+  border-radius: 15px;
+
+  transition: all 0.2s ease-in;
+}
+
+.task:hover {
+  background-color: #ffffff0f;
+}
+
+.task:has(input:checked) {
+  color: #5a5a5a;
+}
+
+.task__wrapper {
+	display: grid;
+	grid-template-columns: 1em auto;
+  align-items: center; 
+	gap: 2em;
+
+  width: 100%;
+}
+
+.task__wrapper + .task__wrapper {
+  margin-top: 1em;
+}
+
+input[type='checkbox'] {
+	/* Add if not using autoprefixer */
+	-webkit-appearance: none;
+	appearance: none;
+	/* For iOS < 15 to remove gradient background */
+	background-color: #fff;
+	/* Not removed via appearance */
+	margin: 0;
+  font: inherit;
+  color: currentColor;
+  width: 2em;
+  height: 2em;
+  border: 0.15em solid currentColor;
+  border-radius: 0.15em;
+  transform: translateY(-0.075em);
+  cursor: pointer;
+
+  display: grid;
+  place-content: center;
+}
+
+input[type="checkbox"]::before {
+  content: "";
+  width: 1em;
+  height: 1em;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em #2bcc81;
+
+  transform-origin: bottom left;
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}
+
+input[type="checkbox"]:checked::before {
+  transform: scale(1);
+}
+
+.task__btn {
+  height: 40px;
+  padding: 10px 30px;
+	border-radius: 50px;
+	color: #fff;
+
+	border: 1px solid rgb(255, 135, 135);
+  transition: all 0.2s ease-in;
+}
+
+.task__btn:hover {
+  color: #000;
+  background: rgb(255, 135, 135);
+}
